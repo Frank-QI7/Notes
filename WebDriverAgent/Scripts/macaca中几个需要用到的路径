@@ -1,0 +1,111 @@
+macaca中几个需要用到的路径
+/usr/local/lib/node_modules/macaca-ios/node_modules/_xctestwd@1.0.42@xctestwd/XCTestWD/XCTestWD.xcodeproj 
+
+/usr/local/lib/node_modules/app-inspector/node_modules/xctestwd/XCTestWD/XCTestWD.xcodeproj 
+
+cd /Users/xiatian/git/macaca-java-biz-sample 
+ mvn -s settings.xml clean install
+app-inspector -u DFCC48FF-642F-4C32-9990-DB292EBB345E
+dfcc48ff642f4c329990db292ebb345e
+mvn -s settings.xml test
+
+先开启macaca服务：
+cd /Users/xiatian/sample-nodejs 
+macaca server --port 4444 --verbose
+
+
+cd /Users/xiatian/sh 
+/bin/sh test.sh
+录制：
+cd /Users/xiatian/sample-nodejs 
+uirecorder init --mobile
+客户端：
+uirecorder --mobile sample/test.spec.js
+浏览器：
+uirecorder sample/test.spec.js
+
+# 开启 Macaca 服务
+$ macaca server --port 4444 --verbose
+# 开始移动端录制
+$ uirecorder start --mobile
+# Macaca 运行
+$ macaca run -p 4444 -d test.spec.js --verbose
+
+
+
+
+
+Monkey
+
+macaca server --verbose
+
+cd /Users/xiatian/git/iosMonkey
+
+java -jar /Users/xiatian/git/iosMonkey/target/iosMonkey-1.0.jar -u F180F9F0-45C4-4C44-BCA6-9438C7D7ACDD -b corp.21cn.dapm
+
+ideviceinstaller -i /Users/xiatian/Desktop/Flow800.ipa 
+
+corp.21cn.dapm - 流量来了
+
+
+xiatiandeMacBook-Air:iosMonkey xiatian$ java -jar /Users/xiatian/git/iosMonkey/target/iosMonkey-1.0.jar -h 
+-u:设备的UDID
+-b:测试App的Bundle
+-port:macaca服务的端口，默认3456
+-proxyport:usb代理端口，默认8900
+
+java -jar /Users/xiatian/git/iosMonkey/target/iosMonkey-1.0.jar -u F180F9F0-45C4-4C44-BCA6-9438C7D7ACDD -b corp.21cn.dapm -port 3456 -proxyport 8900
+0c6c0a77471f5ae76dfdc55b57e0d1502ab92aaa
+
+java -jar /Users/xiatian/git/iosMonkey/target/iosMonkey-1.0.jar -u 0c6c0a77471f5ae76dfdc55b57e0d1502ab92aaa -b corp.21cn.dapm -port 3456 -proxyport 8900
+
+
+
+
+
+
+几个常用命令
+cd /Users/xiatian/sample-nodejs
+
+macaca run -d ./macaca-test/mobile-app-sample.test.js
+
+xcodebuild -project XCTestWD.xcodeproj \
+           -scheme XCTestWDUITests \
+           -destination 'platform=iOS,name=0c6c0a77471f5ae76dfdc55b57e0d1502ab92aaa' \
+           XCTESTWD_PORT=8001 \
+           clean test
+/Users/xiatian/git/XCTestWD/XCTestWD/XCTestWD.xcodeproj 
+
+ cd /usr/local/lib/node_modules/macaca-ios/node_modules/_xctestwd@1.1.0@xctestwd/XCTestWD 
+xcodebuild -project XCTestWD.xcodeproj            
+		   -scheme XCTestWDUITests            
+		   -destination 'platform=iOS Simulator,name=iPhone 6'            XCTESTWD_PORT=8001            
+		   clean test
+
+
+dfcc48ff642f4c329990db292ebb345e
+0c6c0a77471f5ae76dfdc55b57e0d1502ab92aaa
+Z429JQWA8Q
+DEVELOPMENT_TEAM_ID=Z429JQWA8Q npm i macaca-ios -g	
+DEVELOPMENT_TEAM_ID=Z429JQWA8Q cnpm i macaca-ios -g	
+
+
+
+Wdaproxy
+
+wdaproxy -p 8100 -u 0c6c0a77471f5ae76dfdc55b57e0d1502ab92aaa
+wdaproxy -W /Users/xiatian/git/WDA//WebDriverAgent
+
+
+xiatiandeMacBook-Air:~ xiatian$ PASSWORD="1209"
+xiatiandeMacBook-Air:~ xiatian$ security unlock-keychain -p $PASSWORD ~/Library/Keychains/login.keychain
+xiatiandeMacBook-Air:~ xiatian$ UDID=$(idevice_id -l | head -n1)
+xiatiandeMacBook-Air:~ xiatian$ xcodebuild -project /Users/xiatian/git/WebDriverAgent/WebDriverAgent.xcodeproj  -scheme WebDriverAgentRunner -destination "id=$UDID" test
+
+http://localhost:8100/status
+xcodebuild -project /Users/xiatian/git/WDA/WebDriverAgent/WebDriverAgent.xcodeproj  -scheme WebDriverAgentRunner -destination "id=$UDID" test
+/Users/xiatian/git/WDA/WebDriverAgent
+
+
+
+wdaproxy -W /Users/xiatian/git/WebDriverAgent
